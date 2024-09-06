@@ -15,7 +15,7 @@ const EditBook = () => {
 
   useEffect(()=>{
     setLoading(true);
-    axios.get(`http://localhost:5001/books/${id}`).then((response)=>{
+    axios.get(`http://localhost:5002/books/${id}`).then((response)=>{
       setAuthor(response.data.author);
       setTitle(response.data.title);
       setPublishYear(response.data.publishYear);
@@ -30,7 +30,7 @@ const EditBook = () => {
     const data = {title,author,publishYear};
     setLoading(true);
 
-    axios.put(`http://localhost:5001/books/${id}`,data).then(()=>{
+    axios.put(`http://localhost:5002/books/${id}`,data).then(()=>{
       setLoading(false);
       navigate('/');
     }).catch((error)=>{

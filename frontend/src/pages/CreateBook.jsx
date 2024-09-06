@@ -17,7 +17,7 @@ const CreateBook = () => {
     const data = {title,author,publishYear};
     setLoading(true);
 
-    axios.post('http://localhost:5001/books',data).then(()=>{
+    axios.post('http://localhost:5002/books',data).then(()=>{
       setLoading(false);
       navigate('/');
     }).catch((error)=>{

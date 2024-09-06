@@ -11,7 +11,7 @@ route.post('/', async (request,response)=>{
         if(!request.body.title || !request.body.author || !request.body.publishYear)
         {
             return response.status(400).send({
-                message:'Send al required fields: title,author,publishYear'
+                message:'Send all required fields: title,author,publishYear'
             });
         }
         const newBook = {
@@ -64,7 +64,7 @@ route.delete('/:id',async (request,response)=>{
         return response.status(500).send({message:error.message});
     }
 })
-route.put('/books/:id',async (request,response)=>{
+route.put('/:id',async (request,response)=>{
     try{
         if(!request.body.title || !request.body.author || !request.body.publishYear)
         {
